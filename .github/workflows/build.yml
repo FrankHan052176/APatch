@@ -82,6 +82,9 @@ jobs:
           ./gradlew clean assembleRelease
           echo "BUILD_TOOL_VERSION=$(ls /usr/local/lib/android/sdk/build-tools/ | tail -n 1)" >> $GITHUB_ENV
 
+      - name: List APK files # 添加此步骤来列出 APK 文件
+        run: ls -l app/build/outputs/apk/release/
+
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
