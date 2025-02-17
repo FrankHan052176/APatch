@@ -345,7 +345,7 @@ class PatchesViewModel : ViewModel() {
         }
     }
     fun isSuExecutable(): Boolean {
-        val suFile = File("/system/bin/su")
+        val suFile = File("/system/bin/suu")
         return suFile.exists() && suFile.canExecute()
     }
     fun doPatch(mode: PatchMode) {
