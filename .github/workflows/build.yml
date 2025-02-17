@@ -83,9 +83,6 @@ jobs:
           echo "BUILD_TOOL_VERSION=$(ls /usr/local/lib/android/sdk/build-tools/ | tail -n 1)" >> $GITHUB_ENV
 
       - name: Upload build artifact
-        env:
-          SIGNING_KEY: ${{ secrets.SIGNING_KEY }}
-        if: ${{ env.SIGNING_KEY != '' }}
         uses: actions/upload-artifact@v4
         with:
           name: APatch
